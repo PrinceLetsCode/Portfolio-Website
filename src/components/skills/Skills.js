@@ -1,8 +1,11 @@
 import React from 'react'
-
+import SkillGrid from './SkillGrid';
 const Skills = () => {
 	return (
-		<h1>Skills Component</h1>
+		<section id='skill-id'>
+			<h1 className='headings'>Skills </h1>
+			<SkillGrid/>
+		</section>
 	);
 };
 

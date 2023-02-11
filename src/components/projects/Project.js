@@ -1,8 +1,12 @@
 import React from 'react'
+import IndividualProject from './IndividualProject';
 
 const Project = () => {
 	return (
-		<h1>Project Component</h1>
+		<section id='project-id'>
+			<h1 className='headings'>Projects</h1>
+			<IndividualProject />
+		</section>
 	);
 };
 

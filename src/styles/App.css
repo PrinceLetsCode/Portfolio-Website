@@ -1,38 +1,482 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lexend Deca", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --background-primary: rgb(239, 243, 246);
+    --background-secondary: rgb(53, 60, 79);
+    --background-tertiary: rgb(47, 106, 246);
+    --text-grey: rgb(195, 201, 216);
+    --background-grey: rgb(73, 80, 96);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Selects every odd section */
+section:nth-child(2n) {
+    background-color: var(--background-primary);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Selects every even section */
+section:nth-child(2n + 1) {
+    background-color: var(--background-secondary);
 }
 
-.App-link {
-  color: #61dafb;
+section > h1 {
+    color: var(--background-tertiary);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* header  section .home-section .download*/
+header,
+section,
+.home-section,
+.download,
+.skill-grid div,
+.projects div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    padding: 2rem 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100;
+
+    border-bottom: 3px solid var(--background-tertiary);
+    background-color: var(--background-primary);
+}
+
+.owner {
+    color: var(--background-tertiary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--background-grey);
+}
+
+a:hover {
+    color: black;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.3rem;
+
+    font-weight: 500;
+}
+
+nav a {
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    color: var(--background-secondary);
+}
+
+nav a:hover {
+    color: var(--background-tertiary);
+}
+
+.nav-active {
+    border-bottom: 2px solid var(--background-tertiary);
+}
+
+section {
+    height: 100vh;
+    padding: 6rem 4rem 0rem;
+    text-align: center;
+
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-section {
+    padding-top: 10rem;
+}
+
+.hero {
+    text-align: left;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    padding-left: 0.3rem;
+}
+
+.hero h1 {
+    font-size: 5rem;
+}
+
+.hero h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.download {
+    gap: 1rem;
+    justify-content: center;
+    width: fit-content;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--background-tertiary);
+    color: white;
+}
+
+img {
+    width: 500px;
+    border-radius: 15px;
+    margin: 0 1rem;
+}
+
+.headings {
+    font-size: 2.5rem;
+}
+
+.about {
+    margin-top: 2rem;
+    max-width: 800px;
+    font-size: 1.5rem;
+    word-spacing: 0.2rem;
+}
+
+#about-id p {
+    color: var(--text-grey);
+}
+
+.skill-grid,
+.projects,
+.education-grid,
+.contact-icons {
+    display: grid;
+    gap: 1rem;
+}
+
+.skill-grid {
+    margin-top: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.skill-grid div {
+    padding: 1rem 2rem;
+    gap: 1rem;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--background-grey);
+}
+
+.skill-grid svg {
+    font-size: 2rem;
+    color: white;
+}
+
+.skill-grid div {
+    color: white;
+}
+
+#data-structure {
+    grid-column: 1/3;
+}
+
+#algorithm {
+    grid-column: 3/5;
+}
+
+.projects {
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+}
+
+.projects div {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    border-radius: 5px;
+    background-color: var(--background-grey);
+}
+
+.project-name {
+    color: white;
+}
+
+.projects a {
+    font-weight: 500;
+    padding: 1rem;
+    border-radius: 5px;
+
+    width: 100%;
+    color: white;
+    background-color: var(--background-tertiary);
+}
+
+.projects p {
+    color: var(--text-grey);
+}
+
+.education-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
+
+    max-width: 1100px;
+    gap: 2rem;
+}
+
+.education-grid > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+
+    border-radius: 5px;
+    background-color: var(--background-grey);
+}
+
+.education-grid h1 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.inner-edu {
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+.contact-icons {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 4rem;
+    margin: 2rem;
+}
+
+.contact-icons div {
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--background-grey);
+
+    color: white;
+}
+
+.contact-icons svg {
+    color: white;
+}
+
+.contact-icons p {
+    font-size: 1.2rem;
+}
+
+.hamburger {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: space-around;
+
+    /* border: 1px solid black; */
+    width: 2rem;
+    height: 2rem;
+    display: none;
+}
+
+.ham {
+    border: 3px solid black;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 851px) {
+    .hamburger {
+        display: flex;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+    }
+
+    section {
+        padding: 4rem 2rem 0rem;
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 6.5rem;
+        gap: 1rem;
+
+        background-color: var(--background-grey);
+
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    nav a {
+        color: white;
+    }
+
+    img {
+        width: 350px;
+        border-radius: 15px;
+    }
+
+    .about {
+        font-size: 1.2rem;
+    }
+
+    .projects div {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .education-grid > div {
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .education-grid h1 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 715px) {
+    img {
+        width: 250px;
+        border-radius: 15px;
+        margin-right: 0.5rem;
+    }
+
+    .about {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h3 {
+        font-size: 1.2rem;
+    }
+
+    .download {
+        gap: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .skill-grid {
+        gap: 0.5rem;
+    }
+
+    .skill-grid div {
+        padding: 0.4rem 0.4rem;
+        gap: 0.3rem;
+        justify-content: space-around;
+    }
+
+    .projects div {
+        padding: 0.5rem;
+    }
+
+    .education-grid > div {
+        padding: 0.5rem;
+    }
+
+    .inner-edu {
+        padding: 0.5rem 0.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    header {
+        padding: 0.5rem 0.5rem;
+    }
+
+    img {
+        width: 150px;
+    }
+
+    section {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero h3 {
+        font-size: 0.8rem;
+    }
+
+    .hero p {
+        padding-left: 0;
+        font-size: 1rem;
+    }
+
+    aside a {
+        font-size: 1.4rem;
+    }
+
+    .download {
+        gap: 0.5rem;
+        font-size: 10px;
+    }
+
+    .skill-grid div {
+        font-size: 0.6rem;
+    }
+
+    .projects div {
+        gap: 0.3rem;
+        font-size: 0.6rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        margin-top: 0.5rem;
+    }
+
+    .education-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-icons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile {
+        top: 3.5rem;
+        gap: 0.5rem;
+    }
 }
